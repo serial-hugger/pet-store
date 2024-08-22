@@ -9,5 +9,5 @@ public interface IProductLogic
     public CatFood GetCatFoodByName(string name);
     public DogLeash GetDogLeashByName(string name);
 
-    public List<Product> GetOnlyInStockProducts();
+    public List<string> GetOnlyInStockProducts();
 }

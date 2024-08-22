@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace pet_store;
 
@@ -56,8 +57,8 @@ public class ProductLogic : IProductLogic
         }
     }
 
-    public List<Product> GetOnlyInStockProducts()
+    public List<string> GetOnlyInStockProducts()
     {
-        throw new NotImplementedException();
+        return _products.Where(x => x.Quantity > 0).Select(x=>x.Name).ToList();
     }
 }

@@ -16,7 +16,7 @@ public partial class Program
 
     public static void Main(String[] args)
     {
-        Console.WriteLine("1: Add product 2: Search product");
+        Console.WriteLine("1: Add product 2: Search product 3: List products in stock");
         Console.WriteLine("Type 'exit' to quit");
         string userInput = Console.ReadLine();
         while (userInput.ToLower() != "exit")
@@ -187,6 +187,14 @@ public partial class Program
                 else
                 {
                     Console.WriteLine("No product with that name!");
+                }
+            }
+
+            if (userInput.Contains("3"))
+            {
+                foreach (var name in productLogic.GetOnlyInStockProducts())
+                {
+                    Console.WriteLine(name);
                 }
             }
 
