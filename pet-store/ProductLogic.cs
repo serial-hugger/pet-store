@@ -57,8 +57,12 @@ public class ProductLogic : IProductLogic
         }
     }
 
-    public List<string> GetOnlyInStockProducts()
+    public List<Product> GetOnlyInStockProducts()
     {
-        return _products.Where(x => x.Quantity > 0).Select(x=>x.Name).ToList();
+        return _products.InStock();
+    }
+    public decimal GetTotalPriceOfProducts()
+    {
+        return _products.GetTotalPriceOfInventory();
     }
 }
