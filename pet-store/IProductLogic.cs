@@ -10,4 +10,5 @@ public interface IProductLogic
     public DogLeash GetDogLeashByName(string name);
 
     public List<Product> GetOnlyInStockProducts();
+    public decimal GetTotalPriceOfProducts();
 }

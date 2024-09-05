@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Security;
 using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
 using pet_store;
 
 /*
@@ -13,11 +14,12 @@ using pet_store;
 
 public partial class Program
 {
-    private static ProductLogic productLogic { get; set; } = new ProductLogic();
+    static IServiceProvider services = CreateServiceCollection();
     private static UILogic uiLogic { get; set; } = new UILogic();
 
     public static void Main(String[] args)
     {
+        var productLogic = services.GetService<IProductLogic>();
         string userInput = "";
         while (userInput.ToLower() != "exit")
         {
@@ -185,5 +187,12 @@ public partial class Program
                 uiLogic.Say(productLogic.GetTotalPriceOfProducts().ToString());
             }
         }
+    }
+
+    static IServiceProvider CreateServiceCollection()
+    {
+        return new ServiceCollection()
+            .AddTransient<IProductLogic,ProductLogic>()
+            .BuildServiceProvider();
     }
 }
