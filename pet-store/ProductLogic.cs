@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using FluentValidation;
+using Microsoft.Extensions.Options;
+using pet_store.Validators;
 
 namespace pet_store;
 
@@ -18,14 +21,24 @@ public class ProductLogic : IProductLogic
 
     public void AddProduct(Product product)
     {
-        _products.Add(product);
         if (product is CatFood)
         {
-            _catFoods.Add(product.Name,product as CatFood);
+            //CatFoodValidator validator = new CatFoodValidator();
+            if (/*validator.Validate(product as DogLeash).IsValid*/true)
+            {
+                _products.Add(product);
+                _catFoods.Add(product.Name, product as CatFood);
+            }
         }
         if (product is DogLeash)
         {
-            _dogLeashes.Add(product.Name,product as DogLeash);
+            DogLeashValidator validator = new DogLeashValidator();
+            validator.ValidateAndThrow(product as DogLeash);
+            if (validator.Validate(product as DogLeash).IsValid)
+            {
+                _products.Add(product);
+                _dogLeashes.Add(product.Name, product as DogLeash);
+            }
         }
     }
 

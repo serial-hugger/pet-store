@@ -50,3 +50,4 @@
 /home/jeremy/Documents/Projects/pet-store/pet-store/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll
 /home/jeremy/Documents/Projects/pet-store/pet-store/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /home/jeremy/Documents/Projects/pet-store/pet-store/obj/Debug/net8.0/pet-store.csproj.Up2Date
+/home/jeremy/Documents/Projects/pet-store/pet-store/bin/Debug/net8.0/FluentValidation.dll
