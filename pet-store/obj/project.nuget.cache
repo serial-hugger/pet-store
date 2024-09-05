@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QSnjPR0qP7U=",
+  "dgSpecHash": "jmwm8ywI2Bw=",
   "success": true,
   "projectFilePath": "/home/jeremy/Documents/Projects/pet-store/pet-store/pet-store.csproj",
   "expectedPackageFiles": [
+    "/home/jeremy/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512",
     "/home/jeremy/.nuget/packages/microsoft.extensions.configuration/9.0.0-preview.7.24405.7/microsoft.extensions.configuration.9.0.0-preview.7.24405.7.nupkg.sha512",
     "/home/jeremy/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0-preview.7.24405.7/microsoft.extensions.configuration.abstractions.9.0.0-preview.7.24405.7.nupkg.sha512",
     "/home/jeremy/.nuget/packages/microsoft.extensions.configuration.binder/9.0.0-preview.7.24405.7/microsoft.extensions.configuration.binder.9.0.0-preview.7.24405.7.nupkg.sha512",

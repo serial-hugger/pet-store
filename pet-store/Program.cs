@@ -29,123 +29,13 @@ public partial class Program
                 userInput = uiLogic.Ask("What kind of product? (catfood, dogleash)");
                 if (userInput.ToLower().Contains("catfood"))
                 {
-                    userInput=uiLogic.Ask("Is it dry food?");
-                    var catFood = new CatFood();
-                    if (userInput.Contains("yes")||userInput.Contains("true"))
-                    {
-                        catFood = new DryCatFood();
-                    }
-
-                    //Get Name
-                    userInput=uiLogic.Ask("Name?");
-                    catFood.Name = userInput;
-                    //Get Description
-                    userInput = uiLogic.Ask("Description?");
-                    catFood.Description = userInput;
-                    //Get Whether Kitten Food
-                    userInput = uiLogic.Ask("Kitten food? (yes, no)");
-                    if (userInput.Contains("yes") || userInput.Contains("true"))
-                    {
-                        catFood.IsKittenFood = true;
-                    }
-                    else
-                    {
-                        catFood.IsKittenFood = false;
-                    }
-
-                    //Get Price
-                    userInput = uiLogic.Ask("Price?");
-                    try
-                    {
-                        catFood.Price = Decimal.Parse(userInput);
-                    }
-                    catch
-                    {
-                        catFood.Price = (decimal)0.00;
-                    }
-
-                    //Get Quantity
-                    userInput = uiLogic.Ask("Quantity?");
-                    try
-                    {
-                        catFood.Quantity = int.Parse(userInput);
-                    }
-                    catch
-                    {
-                        catFood.Quantity = 0;
-                    }
-
-                    if (catFood is DryCatFood)
-                    {
-                        //Get Weight
-                        userInput = uiLogic.Ask("Weight in pounds?");
-                        try
-                        {
-                            (catFood as DryCatFood).WeightPounds = double.Parse(userInput);
-                        }
-                        catch
-                        {
-                            (catFood as DryCatFood).WeightPounds = 0.0;
-                        }
-                    }
-
-                    if (catFood is DryCatFood)
-                    {
-                        productLogic.AddProduct(catFood as DryCatFood);
-                    }
-                    else
-                    {
-                        productLogic.AddProduct(catFood as CatFood);
-                    }
-
-                    uiLogic.Say("Product Added!");
+                    userInput = uiLogic.Ask("Enter JSON");
+                    productLogic.AddProduct(JsonSerializer.Deserialize<CatFood>(userInput));
                 }
-                else if (userInput.ToLower().Contains("dogleash"))
+                if (userInput.ToLower().Contains("dogleash"))
                 {
-                    var dogLeash = new DogLeash();
-                    //Get Name
-                    userInput=uiLogic.Ask("Name?");
-                    dogLeash.Name = userInput;
-                    //Get Description
-                    userInput = uiLogic.Ask("Description?");
-                    dogLeash.Description = userInput;
-                    //Get Price
-                    userInput = uiLogic.Ask("Price?");
-                    try
-                    {
-                        dogLeash.Price = Decimal.Parse(userInput);
-                    }
-                    catch
-                    {
-                        dogLeash.Price = (decimal)0.00;
-                    }
-
-                    //Get Quantity
-                    userInput = uiLogic.Ask("Quantity?");
-                    try
-                    {
-                        dogLeash.Quantity = int.Parse(userInput);
-                    }
-                    catch
-                    {
-                        dogLeash.Quantity = 0;
-                    }
-
-                    //Get Length in inches
-                    userInput = uiLogic.Ask("Length in inches?");
-                    try
-                    {
-                        dogLeash.LengthInches = int.Parse(userInput);
-                    }
-                    catch
-                    {
-                        dogLeash.LengthInches = 0;
-                    }
-                    //Get Material
-                    userInput = uiLogic.Ask("Material?");
-                    dogLeash.Material = userInput;
-                    productLogic.AddProduct(dogLeash);
-                    uiLogic.Say("Product Added!");
+                    userInput = uiLogic.Ask("Enter JSON");
+                    productLogic.AddProduct(JsonSerializer.Deserialize<DogLeash>(userInput));
                 }
             }
 
