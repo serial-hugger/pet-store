@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Security;
 using System.Text.Json;
 using pet_store;
 
@@ -13,22 +14,20 @@ using pet_store;
 public partial class Program
 {
     private static ProductLogic productLogic { get; set; } = new ProductLogic();
+    private static UILogic uiLogic { get; set; } = new UILogic();
 
     public static void Main(String[] args)
     {
-        Console.WriteLine("1: Add product 2: Search product 3: List products in stock 4: Total price of inventory");
-        Console.WriteLine("Type 'exit' to quit");
-        string userInput = Console.ReadLine();
+        string userInput = "";
         while (userInput.ToLower() != "exit")
         {
-            if (userInput.Contains("1"))
+            userInput = uiLogic.OptionSelect();
+            if (userInput=="1")
             {
-                Console.WriteLine("What kind of product? (catfood, dogleash)");
-                userInput = Console.ReadLine();
+                userInput = uiLogic.Ask("What kind of product? (catfood, dogleash)");
                 if (userInput.ToLower().Contains("catfood"))
                 {
-                    Console.WriteLine("Is it dry food?");
-                    userInput = Console.ReadLine();
+                    userInput=uiLogic.Ask("Is it dry food?");
                     var catFood = new CatFood();
                     if (userInput.Contains("yes")||userInput.Contains("true"))
                     {
@@ -36,16 +35,13 @@ public partial class Program
                     }
 
                     //Get Name
-                    Console.WriteLine("Name?");
-                    userInput = Console.ReadLine();
+                    userInput=uiLogic.Ask("Name?");
                     catFood.Name = userInput;
                     //Get Description
-                    Console.WriteLine("Description?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Description?");
                     catFood.Description = userInput;
                     //Get Whether Kitten Food
-                    Console.WriteLine("Kitten food? (yes, no)");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Kitten food? (yes, no)");
                     if (userInput.Contains("yes") || userInput.Contains("true"))
                     {
                         catFood.IsKittenFood = true;
@@ -56,8 +52,7 @@ public partial class Program
                     }
 
                     //Get Price
-                    Console.WriteLine("Price?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Price?");
                     try
                     {
                         catFood.Price = Decimal.Parse(userInput);
@@ -68,8 +63,7 @@ public partial class Program
                     }
 
                     //Get Quantity
-                    Console.WriteLine("Quantity?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Quantity?");
                     try
                     {
                         catFood.Quantity = int.Parse(userInput);
@@ -82,8 +76,7 @@ public partial class Program
                     if (catFood is DryCatFood)
                     {
                         //Get Weight
-                        Console.WriteLine("Weight in pounds?");
-                        userInput = Console.ReadLine();
+                        userInput = uiLogic.Ask("Weight in pounds?");
                         try
                         {
                             (catFood as DryCatFood).WeightPounds = double.Parse(userInput);
@@ -103,22 +96,19 @@ public partial class Program
                         productLogic.AddProduct(catFood as CatFood);
                     }
 
-                    Console.WriteLine("Product Added!");
+                    uiLogic.Say("Product Added!");
                 }
                 else if (userInput.ToLower().Contains("dogleash"))
                 {
                     var dogLeash = new DogLeash();
                     //Get Name
-                    Console.WriteLine("Name?");
-                    userInput = Console.ReadLine();
+                    userInput=uiLogic.Ask("Name?");
                     dogLeash.Name = userInput;
                     //Get Description
-                    Console.WriteLine("Description?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Description?");
                     dogLeash.Description = userInput;
                     //Get Price
-                    Console.WriteLine("Price?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Price?");
                     try
                     {
                         dogLeash.Price = Decimal.Parse(userInput);
@@ -129,8 +119,7 @@ public partial class Program
                     }
 
                     //Get Quantity
-                    Console.WriteLine("Quantity?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Quantity?");
                     try
                     {
                         dogLeash.Quantity = int.Parse(userInput);
@@ -141,8 +130,7 @@ public partial class Program
                     }
 
                     //Get Length in inches
-                    Console.WriteLine("Length in inches?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Length in inches?");
                     try
                     {
                         dogLeash.LengthInches = int.Parse(userInput);
@@ -151,60 +139,51 @@ public partial class Program
                     {
                         dogLeash.LengthInches = 0;
                     }
-
                     //Get Material
-                    Console.WriteLine("Material?");
-                    userInput = Console.ReadLine();
+                    userInput = uiLogic.Ask("Material?");
                     dogLeash.Material = userInput;
-
                     productLogic.AddProduct(dogLeash);
-                    Console.WriteLine("Product Added!");
+                    uiLogic.Say("Product Added!");
                 }
             }
 
-            if (userInput.Contains("2"))
+            if (userInput=="2")
             {
-                Console.WriteLine("What is the name of the product?");
-                userInput = Console.ReadLine();
-
+                userInput = uiLogic.Ask("What is the name of the product?");
                 CatFood catFood = productLogic.GetCatFoodByName(userInput);
                 DogLeash dogLeash = productLogic.GetDogLeashByName(userInput);
                 if (catFood!=null)
                 {
                     if (catFood is DryCatFood)
                     {
-                        Console.WriteLine(JsonSerializer.Serialize(catFood as DryCatFood));
+                        uiLogic.Say(JsonSerializer.Serialize(catFood as DryCatFood));
                     }
                     else
                     {
-                        Console.WriteLine(JsonSerializer.Serialize(catFood));
+                        uiLogic.Say(JsonSerializer.Serialize(catFood));
                     }
                 }
                 else if (dogLeash!=null)
                 {
-                    Console.WriteLine(JsonSerializer.Serialize(catFood));
+                    uiLogic.Say(JsonSerializer.Serialize(catFood));
                 }
                 else
                 {
-                    Console.WriteLine("No product with that name!");
+                    uiLogic.Say("No product with that name!");
                 }
             }
 
-            if (userInput.Contains("3"))
+            if (userInput=="3")
             {
                 foreach (var name in productLogic.GetOnlyInStockProducts())
                 {
-                    Console.WriteLine(name.Name);
+                    uiLogic.Say(name.Name);
                 }
             }
-            if (userInput.Contains("4"))
+            if (userInput=="4")
             {
-                Console.WriteLine(productLogic.GetTotalPriceOfProducts());
+                uiLogic.Say(productLogic.GetTotalPriceOfProducts().ToString());
             }
-
-            Console.WriteLine("1: Add product 2: Search product");
-            Console.WriteLine("Type 'exit' to quit");
-            userInput = Console.ReadLine();
         }
     }
 }
