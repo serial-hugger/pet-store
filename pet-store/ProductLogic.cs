@@ -58,13 +58,24 @@ public class ProductLogic : IProductLogic
             return null;
         }
     }
-    public DogLeash GetDogLeashByName(string name)
+    public T GetProductByName<T>(string name) where T : Product
     {
         try
         {
-            return _dogLeashes[name];
+            if (typeof(T) == typeof(DogLeash))
+            {
+                return _dogLeashes[name] as T;
+            }
+            else if (typeof(T) == typeof(CatFood))
+            {
+                return _catFoods[name] as T;
+            }
+            else
+            {
+                return null;
+            }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return null;
         }

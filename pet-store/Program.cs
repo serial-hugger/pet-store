@@ -42,8 +42,8 @@ public partial class Program
             if (userInput=="2")
             {
                 userInput = uiLogic.Ask("What is the name of the product?");
-                CatFood catFood = productLogic.GetCatFoodByName(userInput);
-                DogLeash dogLeash = productLogic.GetDogLeashByName(userInput);
+                CatFood catFood = productLogic.GetProductByName<CatFood>(userInput);
+                DogLeash dogLeash = productLogic.GetProductByName<DogLeash>(userInput);
                 if (catFood!=null)
                 {
                     if (catFood is DryCatFood)
@@ -57,7 +57,7 @@ public partial class Program
                 }
                 else if (dogLeash!=null)
                 {
-                    uiLogic.Say(JsonSerializer.Serialize(catFood));
+                    uiLogic.Say(JsonSerializer.Serialize(dogLeash));
                 }
                 else
                 {
