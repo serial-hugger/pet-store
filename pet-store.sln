@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pet-store", "pet-store\pet-store.csproj", "{15017910-3AF6-49AF-99C0-DE2E5D24EEB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pet-store.Data", "pet-store.Data\pet-store.Data.csproj", "{1C2D2606-84FC-4D83-A2E6-66F58236DF66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{15017910-3AF6-49AF-99C0-DE2E5D24EEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15017910-3AF6-49AF-99C0-DE2E5D24EEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15017910-3AF6-49AF-99C0-DE2E5D24EEB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2D2606-84FC-4D83-A2E6-66F58236DF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2D2606-84FC-4D83-A2E6-66F58236DF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2D2606-84FC-4D83-A2E6-66F58236DF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2D2606-84FC-4D83-A2E6-66F58236DF66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

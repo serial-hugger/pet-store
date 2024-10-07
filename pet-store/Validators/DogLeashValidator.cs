@@ -2,13 +2,13 @@ using FluentValidation;
 
 namespace pet_store.Validators;
 
-public class DogLeashValidator : AbstractValidator<DogLeash>
+public class DogLeashValidator : AbstractValidator<Product>
 {
     public DogLeashValidator()
     {
-        RuleFor(dogleash => dogleash.Name).NotEmpty();
-        RuleFor(dogleash => dogleash.Price).GreaterThan(0);
-        RuleFor(dogleash => dogleash.Quantity).GreaterThan(0);
-        RuleFor(dogleash => dogleash.Description).MinimumLength(10).Unless(dogleash => dogleash.Description.Length ==0);
+        RuleFor(product => product.Name).NotEmpty();
+        RuleFor(product => product.Price).GreaterThan(0);
+        RuleFor(product => product.Quantity).GreaterThan(0);
+        RuleFor(product => product.Description).MinimumLength(10).Unless(product => product.Description.Length ==0);
     }
 }
