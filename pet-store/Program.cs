@@ -13,6 +13,7 @@ public partial class Program
     public static void Main(String[] args)
     {
         var productLogic = services.GetService<IProductLogic>();
+        var orderLogic = services.GetService<IOrderLogic>();
         string userInput = "";
         while (userInput.ToLower() != "exit")
         {
@@ -22,7 +23,6 @@ public partial class Program
                 userInput = uiLogic.Ask("Enter the product json.");
                 productLogic.AddProduct(JsonSerializer.Deserialize<Product>(userInput));
             }
-
             if (userInput=="2")
             {
                 userInput = uiLogic.Ask("What is the name of the product?");
@@ -36,6 +36,24 @@ public partial class Program
                     uiLogic.Say("No product with that name!");
                 }
             }
+            if (userInput=="3")
+            {
+                userInput = uiLogic.Ask("Enter the order json.");
+                orderLogic.AddOrder(JsonSerializer.Deserialize<Order>(userInput));
+            }
+            if (userInput=="4")
+            {
+                userInput = uiLogic.Ask("What is the id of the order?");
+                Order order = orderLogic.GetOrderById(int.Parse(userInput));
+                if (order != null)
+                {
+                    uiLogic.Say(JsonSerializer.Serialize(order));
+                }
+                else
+                {
+                    uiLogic.Say("No order with that id!");
+                }
+            }
         }
     }
 
@@ -43,7 +61,9 @@ public partial class Program
     {
         return new ServiceCollection()
             .AddTransient<IProductLogic,ProductLogic>()
+            .AddTransient<IOrderLogic,OrderLogic>()
             .AddTransient<IProductRepository,ProductRepository>()
+            .AddTransient<IOrderRepository,OrderRepository>()
             .BuildServiceProvider();
     }
 }

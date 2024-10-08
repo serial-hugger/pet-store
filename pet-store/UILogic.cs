@@ -7,7 +7,7 @@ public class UILogic
 {
     public string OptionSelect()
     {
-        Say("1: Add product 2: Search product 3: List products in stock 4: Total price of inventory");
+        Say("1: Add product 2: Search product 3: Add order 4: Search order");
         return Ask("Type 'exit' to quit");
     }
     public string Ask(string text)

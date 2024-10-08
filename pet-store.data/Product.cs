@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace pet_store
+namespace pet_store.Data
 {
     public class Product
     {
@@ -10,5 +11,7 @@ namespace pet_store
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
+        public Order Order { get; set; }
+        public int OrderId { get; set; }
     }
 }

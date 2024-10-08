@@ -4,14 +4,14 @@
     "/home/jeremy/Documents/Projects/pet-store/pet-store/pet-store.csproj": {}
   },
   "projects": {
-    "/home/jeremy/Documents/Projects/pet-store/pet-store.Data/pet-store.Data.csproj": {
+    "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jeremy/Documents/Projects/pet-store/pet-store.Data/pet-store.Data.csproj",
-        "projectName": "pet-store.Data",
-        "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.Data/pet-store.Data.csproj",
+        "projectUniqueName": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj",
+        "projectName": "pet-store.data",
+        "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj",
         "packagesPath": "/home/jeremy/.nuget/packages/",
-        "outputPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.Data/obj/",
+        "outputPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/jeremy/.nuget/NuGet/NuGet.Config"
@@ -102,8 +102,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/jeremy/Documents/Projects/pet-store/pet-store.Data/pet-store.Data.csproj": {
-                "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.Data/pet-store.Data.csproj"
+              "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj": {
+                "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj"
               }
             }
           }

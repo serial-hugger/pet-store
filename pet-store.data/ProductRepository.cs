@@ -2,10 +2,10 @@ namespace pet_store.Data;
 
 public class ProductRepository : IProductRepository
 {
-        private readonly ProductContext _context;
+        private readonly DbContext _context;
         public ProductRepository()
         {
-            _context = new ProductContext();
+            _context = new DbContext();
         }
 
         

@@ -1,4 +1,5 @@
 using FluentValidation;
+using pet_store.Data;
 
 namespace pet_store.Validators;
 

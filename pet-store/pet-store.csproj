@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\pet-store.Data\pet-store.Data.csproj" />
+      <ProjectReference Include="..\pet-store.data\pet-store.data.csproj" />
     </ItemGroup>
 
 </Project>
