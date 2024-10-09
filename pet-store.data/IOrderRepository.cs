@@ -4,6 +4,6 @@ public interface IOrderRepository
 {
     void AddOrder(Order order);
 
-    Order GetOrder(int id);
+    Order GetOrderById(int id);
     List<Order> GetOrders();
 }

@@ -14,7 +14,7 @@ public class ProductRepository : IProductRepository
             _context.Products.Add(product);
             _context.SaveChanges();
         }
-        public Product GetProduct(int id)
+        public Product GetProductById(int id)
         {
             return _context.Products.Where(p => p.ProductId == id).FirstOrDefault();
         }

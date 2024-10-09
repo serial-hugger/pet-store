@@ -14,7 +14,7 @@ public class OrderRepository : IOrderRepository
         _context.SaveChanges();
     }
 
-    public Order GetOrder(int id)
+    public Order GetOrderById(int id)
     {
         return _context.Orders.Where(o => o.OrderId == id).FirstOrDefault();
     }

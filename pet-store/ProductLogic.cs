@@ -25,7 +25,11 @@ public class ProductLogic : IProductLogic
     {
         return _repository.GetProducts();
     }
-    
+
+    public Product GetProductById(int id)
+    {
+        return _repository.GetProductById(id);
+    }
     public Product GetProductByName(string name)
     {
         try
