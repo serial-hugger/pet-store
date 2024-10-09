@@ -10,7 +10,7 @@
         "dependencies": {
           "FluentValidation": "11.9.2",
           "Microsoft.Extensions.Hosting": "9.0.0-preview.7.24405.7",
-          "pet-store.Data": "1.0.0"
+          "pet-store.data": "1.0.0"
         },
         "runtime": {
           "pet-store.dll": {}
@@ -696,12 +696,12 @@
           }
         }
       },
-      "pet-store.Data/1.0.0": {
+      "pet-store.data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.8"
         },
         "runtime": {
-          "pet-store.Data.dll": {
+          "pet-store.data.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1051,7 +1051,7 @@
       "path": "system.text.json/9.0.0-preview.7.24405.7",
       "hashPath": "system.text.json.9.0.0-preview.7.24405.7.nupkg.sha512"
     },
-    "pet-store.Data/1.0.0": {
+    "pet-store.data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
