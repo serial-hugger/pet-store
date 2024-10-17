@@ -10,35 +10,51 @@ namespace pet_store;
 
 public class ProductLogic : IProductLogic
 {
-    private readonly IProductRepository _repository;
-    public ProductLogic(IProductRepository repository)
+    private readonly IProductRepository _productRepo;
+    private readonly IOrderRepository _orderRepo;
+    public ProductLogic(IProductRepository productRepo, IOrderRepository orderRepo)
     {
-        _repository = repository;
+        _productRepo = productRepo;
+        _orderRepo = orderRepo;
     }
     
     public void AddProduct(Product product)
     {
-        _repository.AddProduct(product);
+        _productRepo.AddProduct(product);
     }
 
     public List<Product> GetAllProducts()
     {
-        return _repository.GetProducts();
+        return _productRepo.GetProducts();
     }
 
     public Product GetProductById(int id)
     {
-        return _repository.GetProductById(id);
+        return _productRepo.GetProductById(id);
     }
     public Product GetProductByName(string name)
     {
         try
         {
-            return _repository.GetProducts().Where(p => p.Name == name).First();
+            return _productRepo.GetProducts().Where(p => p.Name == name).First();
         }
         catch (Exception)
         {
             return null;
         }
+    }
+    public void AddOrder(Order order)
+    {
+        _orderRepo.AddOrder(order);
+    }
+
+    public List<Order> GetAllOrders()
+    {
+        return _orderRepo.GetOrders();
+    }
+
+    public Order GetOrderById(int id)
+    {
+        return _orderRepo.GetOrderById(id);
     }
 }

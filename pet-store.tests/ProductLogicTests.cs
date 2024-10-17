@@ -10,14 +10,12 @@ public class ProductLogicTests
     private readonly Mock<IOrderRepository> _orderRepoMock;
     
     private readonly ProductLogic _productLogic;
-    private readonly OrderLogic _orderLogic;
     public ProductLogicTests()
     {
         _productRepoMock = new Mock<IProductRepository>();
         _orderRepoMock = new Mock<IOrderRepository>();
         
         _productLogic = new ProductLogic(_productRepoMock.Object);
-        _orderLogic = new OrderLogic(_orderRepoMock.Object);
     }
     [TestMethod]
     public void GetProductById_CallsRepo()
