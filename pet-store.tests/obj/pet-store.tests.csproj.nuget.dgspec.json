@@ -1,0 +1,254 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/jeremy/Documents/Projects/pet-store/pet-store.tests/pet-store.tests.csproj": {}
+  },
+  "projects": {
+    "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj",
+        "projectName": "pet-store.data",
+        "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj",
+        "packagesPath": "/home/jeremy/.nuget/packages/",
+        "outputPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jeremy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/jeremy/.dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/jeremy/Documents/Projects/pet-store/pet-store.tests/pet-store.tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jeremy/Documents/Projects/pet-store/pet-store.tests/pet-store.tests.csproj",
+        "projectName": "pet-store.tests",
+        "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.tests/pet-store.tests.csproj",
+        "packagesPath": "/home/jeremy/.nuget/packages/",
+        "outputPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jeremy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj": {
+                "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj"
+              },
+              "/home/jeremy/Documents/Projects/pet-store/pet-store/pet-store.csproj": {
+                "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store/pet-store.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/jeremy/.dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/jeremy/Documents/Projects/pet-store/pet-store/pet-store.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jeremy/Documents/Projects/pet-store/pet-store/pet-store.csproj",
+        "projectName": "pet-store",
+        "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store/pet-store.csproj",
+        "packagesPath": "/home/jeremy/.nuget/packages/",
+        "outputPath": "/home/jeremy/Documents/Projects/pet-store/pet-store/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jeremy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj": {
+                "projectPath": "/home/jeremy/Documents/Projects/pet-store/pet-store.data/pet-store.data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.10.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/jeremy/.dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

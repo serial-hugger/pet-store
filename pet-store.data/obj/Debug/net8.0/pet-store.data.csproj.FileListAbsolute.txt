@@ -1,0 +1,15 @@
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/bin/Debug/net8.0/pet-store.data.deps.json
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/bin/Debug/net8.0/pet-store.data.runtimeconfig.json
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/bin/Debug/net8.0/pet-store.data.dll
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/bin/Debug/net8.0/pet-store.data.pdb
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.csproj.AssemblyReference.cache
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.GeneratedMSBuildEditorConfig.editorconfig
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.AssemblyInfoInputs.cache
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.AssemblyInfo.cs
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.csproj.CoreCompileInputs.cache
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.sourcelink.json
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.dll
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/refint/pet-store.data.dll
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.pdb
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/pet-store.data.genruntimeconfig.cache
+/home/jeremy/Documents/Projects/pet-store/pet-store.data/obj/Debug/net8.0/ref/pet-store.data.dll
