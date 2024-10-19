@@ -18,7 +18,6 @@ namespace pet_store.Controllers
         {
             return new JsonResult(_productLogic.GetProductById(id));
         }
-
         [HttpGet("{action}/{orderId}")]
         public IActionResult GetOrder(int orderId)
         {

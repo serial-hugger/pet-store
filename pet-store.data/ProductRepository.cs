@@ -7,8 +7,6 @@ public class ProductRepository : IProductRepository
         {
             _context = new DbContext();
         }
-
-        
         public void AddProduct(Product product)
         {
             _context.Products.Add(product);
@@ -18,7 +16,7 @@ public class ProductRepository : IProductRepository
         {
             return _context.Products.Where(p => p.ProductId == id).FirstOrDefault();
         }
-        public List<Product> GetProducts()
+        public List<Product> GetAllProducts()
         {
             return _context.Products.ToList();
         }

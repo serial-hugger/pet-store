@@ -5,5 +5,5 @@ public interface IProductRepository
     void AddProduct(Product product);
 
     Product GetProductById(int id);
-    List<Product> GetProducts();
+    List<Product> GetAllProducts();
 }

@@ -19,7 +19,7 @@ public class OrderRepository : IOrderRepository
         return _context.Orders.Where(o => o.OrderId == id).FirstOrDefault();
     }
 
-    public List<Order> GetOrders()
+    public List<Order> GetAllOrders()
     {
         return _context.Orders.ToList();
     }
