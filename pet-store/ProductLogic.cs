@@ -14,21 +14,24 @@ public class ProductLogic : IProductLogic
 
     public void AddProduct(Product product)
     {
-        _productRepo.AddProduct(product);
+        _productRepo.AddProductAsync(product);
     }
     public List<Product> GetAllProducts()
     {
-        return _productRepo.GetAllProducts();
+        var products = _productRepo.GetAllProductsAsync().Result;
+        return products;
     }
     public Product GetProductById(int id)
     {
-        return _productRepo.GetProductById(id);
+        var product = _productRepo.GetProductByIdAsync(id).Result;
+        return product;
     }
     public Product GetProductByName(string name)
     {
         try
         {
-            return _productRepo.GetAllProducts().Where(p => p.Name == name).First();
+            var products = _productRepo.GetAllProductsAsync().Result;
+            return products.Where(p => p.Name == name).First();
         }
         catch (Exception)
         {
@@ -41,10 +44,12 @@ public class ProductLogic : IProductLogic
     }
     public List<Order> GetAllOrders()
     {
-        return _orderRepo.GetAllOrders();
+        var orders = _orderRepo.GetAllOrdersAsync().Result;
+        return orders;
     }
     public Order GetOrderById(int id)
     {
-        return _orderRepo.GetOrderById(id);
+        var order = _orderRepo.GetOrderByIdAsync(id).Result;
+        return order;
     }
 }

@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace pet_store.Data;
 
 public class OrderRepository : IOrderRepository
@@ -8,19 +10,19 @@ public class OrderRepository : IOrderRepository
         _context = new DbContext();
     }
 
-    public void AddOrder(Order order)
+    public async Task AddOrder(Order order)
     {
-        _context.Orders.Add(order);
-        _context.SaveChanges();
+        await _context.Orders.AddAsync(order);
+        await _context.SaveChangesAsync();
     }
 
-    public Order GetOrderById(int id)
+    public async Task<Order> GetOrderByIdAsync(int id)
     {
-        return _context.Orders.Where(o => o.OrderId == id).FirstOrDefault();
+        return await _context.Orders.Where(o => o.OrderId == id).FirstOrDefaultAsync();
     }
 
-    public List<Order> GetAllOrders()
+    public async Task<List<Order>> GetAllOrdersAsync()
     {
-        return _context.Orders.ToList();
+        return await _context.Orders.ToListAsync();
     }
 }

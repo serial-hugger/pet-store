@@ -2,8 +2,8 @@ namespace pet_store.Data;
 
 public interface IOrderRepository
 {
-    void AddOrder(Order order);
+    Task AddOrder(Order order);
 
-    Order GetOrderById(int id);
-    List<Order> GetAllOrders();
+    Task<Order> GetOrderByIdAsync(int id);
+    Task<List<Order>> GetAllOrdersAsync();
 }

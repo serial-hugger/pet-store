@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace pet_store.Data;
 
 public class ProductRepository : IProductRepository
@@ -7,17 +9,17 @@ public class ProductRepository : IProductRepository
         {
             _context = new DbContext();
         }
-        public void AddProduct(Product product)
+        public async Task AddProductAsync(Product product)
         {
-            _context.Products.Add(product);
-            _context.SaveChanges();
+            await _context.Products.AddAsync(product);
+            await _context.SaveChangesAsync();
         }
-        public Product GetProductById(int id)
+        public async Task<Product> GetProductByIdAsync(int id)
         {
-            return _context.Products.Where(p => p.ProductId == id).FirstOrDefault();
+            return await _context.Products.Where(p => p.ProductId == id).FirstOrDefaultAsync();
         }
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProductsAsync()
         {
-            return _context.Products.ToList();
+            return await _context.Products.ToListAsync();
         }
 }

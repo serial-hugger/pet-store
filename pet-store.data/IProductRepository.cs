@@ -2,8 +2,8 @@ namespace pet_store.Data;
 
 public interface IProductRepository
 {
-    void AddProduct(Product product);
+    Task AddProductAsync(Product product);
 
-    Product GetProductById(int id);
-    List<Product> GetAllProducts();
+    Task<Product> GetProductByIdAsync(int id);
+    Task<List<Product>> GetAllProductsAsync();
 }
