@@ -14,14 +14,16 @@ namespace pet_store.Controllers
             _productLogic = productLogic;
         }
         [HttpGet("{action}/{id}")]
-        public IActionResult GetProduct(int id)
+        public async Task<IActionResult> GetProduct(int id)
         {
-            return new JsonResult(_productLogic.GetProductByIdAsync(id));
+            var result = await _productLogic.GetProductByIdAsync(id);
+            return new JsonResult(result);
         }
         [HttpGet("{action}/{orderId}")]
-        public IActionResult GetOrder(int orderId)
+        public async Task<IActionResult> GetOrder(int orderId)
         {
-            return new JsonResult(_productLogic.GetOrderByIdAsync(orderId));
+            var result = await _productLogic.GetOrderByIdAsync(orderId);
+            return new JsonResult(result);
         }
     }
 }
