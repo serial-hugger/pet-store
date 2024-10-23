@@ -12,25 +12,25 @@ public class ProductLogic : IProductLogic
         _orderRepo = orderRepo;
     }
 
-    public void AddProduct(Product product)
+    public async Task AddProductAsync(Product product)
     {
-        _productRepo.AddProductAsync(product);
+        await _productRepo.AddProductAsync(product);
     }
-    public List<Product> GetAllProducts()
+    public async Task<List<Product>> GetAllProductsAsync()
     {
-        var products = _productRepo.GetAllProductsAsync().Result;
+        var products = await _productRepo.GetAllProductsAsync();
         return products;
     }
-    public Product GetProductById(int id)
+    public async Task<Product> GetProductByIdAsync(int id)
     {
-        var product = _productRepo.GetProductByIdAsync(id).Result;
+        var product = await _productRepo.GetProductByIdAsync(id);
         return product;
     }
-    public Product GetProductByName(string name)
+    public async Task<Product> GetProductByNameAsync(string name)
     {
         try
         {
-            var products = _productRepo.GetAllProductsAsync().Result;
+            var products = await _productRepo.GetAllProductsAsync();
             return products.Where(p => p.Name == name).First();
         }
         catch (Exception)
@@ -38,18 +38,18 @@ public class ProductLogic : IProductLogic
             return null;
         }
     }
-    public void AddOrder(Order order)
+    public async Task AddOrderAsync(Order order)
     {
-        _orderRepo.AddOrder(order);
+        await _orderRepo.AddOrder(order);
     }
-    public List<Order> GetAllOrders()
+    public async Task<List<Order>> GetAllOrdersAsync()
     {
-        var orders = _orderRepo.GetAllOrdersAsync().Result;
+        var orders = await _orderRepo.GetAllOrdersAsync();
         return orders;
     }
-    public Order GetOrderById(int id)
+    public async Task<Order> GetOrderByIdAsync(int id)
     {
-        var order = _orderRepo.GetOrderByIdAsync(id).Result;
+        var order = await _orderRepo.GetOrderByIdAsync(id);
         return order;
     }
 }

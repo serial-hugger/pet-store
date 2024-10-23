@@ -16,12 +16,12 @@ namespace pet_store.Controllers
         [HttpGet("{action}/{id}")]
         public IActionResult GetProduct(int id)
         {
-            return new JsonResult(_productLogic.GetProductById(id));
+            return new JsonResult(_productLogic.GetProductByIdAsync(id));
         }
         [HttpGet("{action}/{orderId}")]
         public IActionResult GetOrder(int orderId)
         {
-            return new JsonResult(_productLogic.GetOrderById(orderId));
+            return new JsonResult(_productLogic.GetOrderByIdAsync(orderId));
         }
     }
 }

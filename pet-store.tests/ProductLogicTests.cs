@@ -25,7 +25,7 @@ public class ProductLogicTests
         _productRepoMock.Setup(x => x.GetProductByIdAsync(10))
             .ReturnsAsync(new Product { ProductId = 10, Name = "test product" });
         // Act
-        _productLogic.GetProductById(10);
+        _productLogic.GetProductByIdAsync(10).Wait();
         // Assert
         _productRepoMock.Verify(x => x.GetProductByIdAsync(10), Times.Once);
     }
@@ -36,7 +36,7 @@ public class ProductLogicTests
         _orderRepoMock.Setup(x => x.GetOrderByIdAsync(10))
             .ReturnsAsync(new Order { OrderId = 10, OrderDate = new DateTime(2023,4,19) });
         // Act
-        _productLogic.GetOrderById(10);
+        _productLogic.GetOrderByIdAsync(10).Wait();
         // Assert
         _orderRepoMock.Verify(x => x.GetOrderByIdAsync(10), Times.Once);
     }
@@ -47,7 +47,7 @@ public class ProductLogicTests
         _productRepoMock.Setup(x => x.GetAllProductsAsync())
             .ReturnsAsync([new Product { ProductId = 10, Name = "test product" }]);
         // Act
-        _productLogic.GetAllProducts();
+        _productLogic.GetAllProductsAsync().Wait();
         // Assert
         _productRepoMock.Verify(x => x.GetAllProductsAsync(), Times.Once);
     }
@@ -58,7 +58,7 @@ public class ProductLogicTests
         _orderRepoMock.Setup(x => x.GetAllOrdersAsync())
             .ReturnsAsync([new Order { OrderId = 1, OrderDate = new DateTime(2023,4,19) }]);
         // Act
-        _productLogic.GetAllOrders();
+        _productLogic.GetAllOrdersAsync().Wait();
         // Assert
         _orderRepoMock.Verify(x => x.GetAllOrdersAsync(), Times.Once);
     }
